@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    stages {
     stage('Upload to AWS') {
               steps {
                   withAWS(region:'ap-southeast-1',credentials:'aws-static') {
@@ -8,4 +9,5 @@ pipeline{
                   }
               }
          }
+}
 }
